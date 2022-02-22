@@ -1,0 +1,14 @@
+http:
+  services:
+    blue:
+      loadBalancer:
+        servers:
+          - url: 'http://blue/'
+    green:
+      loadBalancer:
+        servers:
+          - url: 'http://green/'
+  routers:
+    docker-localhost:
+      rule: Host(`docker.localhost`)
+      service: blue

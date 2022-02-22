@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  blue:
+    build: ./app
+
+  green:
+    build: ./app
+
+  proxy:
+    image: traefik:2.6.1
+    ports:
+      - 8080:8080
+      - 8090:80
+    volumes:
+      - ${PWD}/proxy/traefik-conf.yml:/etc/traefik/traefik.yml
+      - ${PWD}/proxy/traefik-dynamic:/etc/traefik/dynamic

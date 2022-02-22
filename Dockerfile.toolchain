@@ -1,0 +1,9 @@
+FROM ubuntu:focal
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
+RUN apt-get update; apt-get install -y curl jq build-essential docker-compose docker apache2-utils gettext-base
+WORKDIR /workspace
+
+ENTRYPOINT ["/usr/bin/bash"]

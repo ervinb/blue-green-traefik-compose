@@ -1,0 +1,6 @@
+BLUE="blue"
+GREEN="green"
+APP_HOSTNAME="docker.localhost"
+APP_URL="http://localhost:8090"
+PROXY_URL="http://localhost:8080"
+RESULT_PATH="./result.txt"

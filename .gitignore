@@ -1,0 +1,2 @@
+result.txt
+proxy/traefik-dynamic/http.routers.docker-localhost.override.yml
