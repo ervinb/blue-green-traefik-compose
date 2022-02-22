@@ -96,3 +96,11 @@ This will:
 - build and deploy the new container
 - perform another GET request to show the updated content
 - print the report
+
+### Troubleshooting
+
+#### Proxy doesn't get updated
+The update process (and traefik's file provider) relies on `inotofy` events. Running the components
+where Docker is in a VM (like on a Mac, `Docker Desktop for Mac` is an exception) does not properly
+propagate inotify events. See: https://github.com/moby/moby/issues/18246
+The proposed solution is to use https://github.com/sillypog/inotify-proxy
