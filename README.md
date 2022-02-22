@@ -1,5 +1,19 @@
 ## Blue/Green Deployment POC with Traefik and Docker Compose
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Setup](#setup)
+  * [Host](#host)
+  * [Toolchain](#toolchain)
+* [Start](#start)
+* [Deployment](#deployment)
+* [Testing](#testing)
+* [Troubleshooting](#troubleshooting)
+  * [Proxy doesn't get updated](#proxy-doesnt-get-updated)
+
+<!-- vim-markdown-toc -->
+
 ### Setup
 
 The scripts in this repository rely on the following tools being present in the environment:
@@ -103,4 +117,5 @@ This will:
 The update process (and traefik's file provider) relies on `inotofy` events. Running the components
 where Docker is in a VM (like on a Mac, `Docker Desktop for Mac` is an exception) does not properly
 propagate inotify events. See: https://github.com/moby/moby/issues/18246
+
 The proposed solution is to use https://github.com/sillypog/inotify-proxy
